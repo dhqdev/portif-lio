@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David
-    </title>
+    <title>Nosso Jardim Secreto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    oi eu 
+    <div class="container">
+        <!-- Página Inicial -->
+        <section id="home" class="page active">
+            <h1>Bem-vinda ao Nosso Jardim Secreto, Meu Amor</h1>
+            <p>Este é um lugar só nosso, onde guardo todos os meus sentimentos por você.</p>
+            <button onclick="navigate('story')">Entrar no Nosso Mundo</button>
+        </section>
+
+        <!-- Página Nossa História -->
+        <section id="story" class="page">
+            <h2>Nossa História</h2>
+            <p>Tudo começou em [data ou lugar onde se conheceram]. Desde então, cada momento ao seu lado tem sido mágico...</p>
+            <button onclick="navigate('reasons')">Próxima Página</button>
+        </section>
+
+        <!-- Página Razões Pelas Que Eu Te Amo -->
+        <section id="reasons" class="page">
+            <h2>Razões Pelas Que Eu Te Amo</h2>
+            <div id="love-reasons">
+                <p>Clique no coração para descobrir uma razão:</p>
+                <div class="heart" onclick="showReason()">❤️</div>
+                <p id="reason-text"></p>
+            </div>
+            <button onclick="navigate('messages')">Próxima Página</button>
+        </section>
+
+        <!-- Página Mensagens Especiais -->
+        <section id="messages" class="page">
+            <h2>Mensagens Especiais</h2>
+            <p>Aqui estão algumas cartas que escrevi para você:</p>
+            <div class="message">
+                <p>"Querida [Nome dela], você é a luz da minha vida..."</p>
+            </div>
+            <button onclick="navigate('future')">Próxima Página</button>
+        </section>
+
+        <!-- Página Nosso Futuro -->
+        <section id="future" class="page">
+            <h2>Nosso Futuro</h2>
+            <p>Juntos, vamos conquistar o mundo. Mal posso esperar para viver todos os nossos sonhos ao seu lado.</p>
+            <button onclick="navigate('home')">Voltar ao Início</button>
+        </section>
+    </div>
+
+    <!-- Música de fundo (opcional) -->
+    <audio id="background-music" loop>
+        <source src="sua-musica-romantica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
