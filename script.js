@@ -33,15 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Esconder barra de navegação ao clicar em uma opção no celular
-    navLinks.forEach(link => {
-        link.addEventListener("click", function() {
-            if (window.innerWidth <= 768) {
-                document.querySelector("header").style.display = "none";
-            }
-        });
-    });
-
+    // Remover funcionalidade de esconder barra de navegação
     // Mostrar barra de navegação ao rolar para cima
     let lastScrollTop = 0;
     window.addEventListener("scroll", function() {
