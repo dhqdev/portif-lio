@@ -42,8 +42,28 @@ nav ul li a:hover {
     text-shadow: 0 0 10px #ff00ff;
 }
 
+header nav ul li a.active {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
 section {
     padding: 50px 20px;
+}
+
+main {
+    padding: 50px 20px;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #6a0dad;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .projeto {
