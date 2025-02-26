@@ -15,6 +15,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -22,9 +23,21 @@
     <main>
         <section id="contato">
             <h2>Entre em Contato</h2>
-            <p>Conecte-se comigo pelo e-mail: <a href="mailto:david.h.queiroz@gmail.com">david.h.queiroz@gmail.com</a></p>
-            <p>Telefone: <a href="tel:+19995378302">19995378302</a></p>
-            <button onclick="window.location.href='index.html'">Voltar para Home</button>
+            <button onclick="window.location.href='mailto:david.h.queiroz@gmail.com'">Enviar E-mail</button>
+            <button onclick="window.location.href='https://wa.me/19995378302'">WhatsApp</button>
+            <button onclick="window.location.href='https://www.linkedin.com/in/david-henrique-queiroz-viotti-fernandes-77a663229/'">Meu LinkedIn</button>
+        </section>
+        <section id="form">
+            <h2>Formulário de Contato</h2>
+            <form action="mailto:david.h.queiroz@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
     
