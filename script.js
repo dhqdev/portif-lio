@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Efeito de digitação no título
     const titulo = document.querySelector("h1");
-    const texto = "🚀 Bem-vindo ao meu Portfólio Futurista! 🌌";
+    const texto = titulo.textContent;
     let index = 0;
 
     function digitar() {
@@ -23,5 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
         projeto.addEventListener("mouseout", function() {
             projeto.style.boxShadow = "0 0 15px #6a0dad";
         });
+    });
+
+    // Marcar link ativo na navegação
+    const navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add("active");
+        }
     });
 });
