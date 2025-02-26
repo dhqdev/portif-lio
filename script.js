@@ -21,6 +21,7 @@ function showReason() {
 }
 
 // Tocar música de fundo (opcional)
+
 window.onload = function() {
     const music = document.getElementById('background-music');
     music.play();
