@@ -32,4 +32,23 @@ document.addEventListener("DOMContentLoaded", function() {
             link.classList.add("active");
         }
     });
+
+    // Esconder barra de navegação ao clicar em uma opção no celular
+    navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector("header").style.display = "none";
+            }
+        });
+    });
+
+    // Mostrar barra de navegação ao rolar para cima
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop < lastScrollTop) {
+            document.querySelector("header").style.display = "block";
+        }
+        lastScrollTop = scrollTop;
+    });
 });
