@@ -3,42 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>David Fernandes - Portfólio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>🚀 Bem-vindo ao meu Portfólio! 🌌</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="home">
-            <h2>🌟 Bem-vindo ao Meu Portfólio</h2>
-            <p>Explore minhas habilidades, projetos e entre em contato comigo.</p>
-            <button onclick="window.location.href='projetos.html'">Veja Meus Projetos</button>
-            <button onclick="window.location.href='sobre.html'">Saiba Mais Sobre Mim</button>
-        </section>
-        <section id="skills">
-            <h2>Minhas Habilidades</h2>
-            <p>Desenvolvimento Web, Python, JavaScript, Frappe Framework, ERP, CRM, Sistemas para Clínicas</p>
-        </section>
-        <section id="testimonials">
-            <h2>Depoimentos</h2>
-            <p>"David é um desenvolvedor excepcional, sempre buscando soluções inovadoras." - Cliente Satisfeito</p>
-            <p>"Trabalhar com David foi uma experiência incrível, ele é muito dedicado e talentoso." - Parceiro de Projeto</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>🚀 &copy; 2025 Meu Nome. Todos os direitos reservados. 🌌</p>
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span>David Fernandes</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Início</a>
+            <a href="#about" class="nav-link">Sobre</a>
+            <a href="#timeline" class="nav-link">Trajetória</a>
+            <a href="#projects" class="nav-link">Projetos</a>
+            <a href="#skills" class="nav-link">Competências</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#contact" class="nav-link">Contato</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Olá, eu sou</span>
+                    <span class="name">David Fernandes</span>
+                </h1>
+                <p class="hero-subtitle typing-animation">
+                    Desenvolvedor • Estudante • Cristão • Músico • Professor
+                </p>
+                <p class="hero-description">
+                    Apaixonado por criar soluções tecnológicas que transformam vidas, 
+                    unindo fé, criatividade e inovação em cada linha de código.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        Ver Projetos
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Entre em Contato
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                    <p>Sua foto aqui</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        Sou um estudante de software que acredita no poder da tecnologia para 
+                        transformar vidas e resolver problemas reais. Como cristão, busco sempre 
+                        desenvolver soluções que honrem a Deus e sirvam ao próximo.
+                    </p>
+                    <p>
+                        Minha paixão por ensinar me levou a compartilhar conhecimento e orientar 
+                        outros desenvolvedores em sua jornada. Na música, encontro inspiração e 
+                        criatividade que transparecem em meu código.
+                    </p>
+                    <blockquote class="inspirational-quote">
+                        "Código com propósito, tecnologia que serve"
+                    </blockquote>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Anos de Experiência</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projetos Concluídos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Dedicação</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Minha Trajetória</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Estágio em Infraestrutura - BRF</h3>
+                        <span class="timeline-date">2 anos</span>
+                        <p>Experiência sólida em infraestrutura de TI, aprendendo sobre sistemas corporativos e gestão de tecnologia em grande escala.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Trainee Desenvolvedor - GRV Software</h3>
+                        <span class="timeline-date">8 meses (atual)</span>
+                        <p>Desenvolvimento com Python, JavaScript e Frappe Framework. Criação de APIs e sistemas robustos para diversos clientes.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Frappe</span>
+                            <span class="tag">APIs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Projetos Pessoais & Freelances</h3>
+                        <span class="timeline-date">Contínuo</span>
+                        <p>Desenvolvimento de ERPs, sistemas para clínicas, aplicativos de emergência e projetos inovadores que combinam tecnologia e propósito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projetos em Destaque</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="erp-barbearia">
+                    <div class="project-image">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>ERP para Barbearia</h3>
+                        <p>Sistema completo de gestão para barbearias com agendamentos, controle financeiro e relatórios.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Frappe</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="sistema-vision">
+                    <div class="project-image">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema Vision - Clínicas</h3>
+                        <p>Plataforma para gestão de clínicas médicas com prontuários eletrônicos e agendamentos.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Database</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="app-emergencia">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>App Emergência Familiar</h3>
+                        <p>Aplicativo de segurança familiar integrado com Arduino para situações de emergência.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Mobile</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="kanban-ia">
+                    <div class="project-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kanban com IA</h3>
+                        <p>Sistema Kanban inteligente integrado ao Firebase com recursos de IA para otimização de tarefas.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">IA</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="sistema-cristao">
+                    <div class="project-image">
+                        <i class="fas fa-cross"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema Cristão Organizacional</h3>
+                        <p>Plataforma para organização espiritual com estudos bíblicos e acompanhamento pastoral.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Database</span>
+                            <span class="tech-tag">Web</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="site-luiza">
+                    <div class="project-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Site Retrô - Luiza</h3>
+                        <p>Site nostálgico criado com carinho para minha namorada, com design vintage e interações especiais.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Competências Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Linguagens</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS</span>
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frameworks & Tecnologias</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Frappe Framework</span>
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-vuejs"></i>
+                            <span>Vue.js</span>
+                            <div class="skill-level" data-level="70"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                            <div class="skill-level" data-level="65"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Ferramentas & Plataformas</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git & GitHub</span>
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                            <div class="skill-level" data-level="75"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Selenium</span>
+                            <div class="skill-level" data-level="70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Devocionais & Devs</h2>
+            <p class="section-subtitle">Reflexões sobre fé cristã e tecnologia no contexto universitário</p>
+            <div class="blog-carousel">
+                <div class="blog-post">
+                    <h3>Código com Propósito</h3>
+                    <p>Como a programação pode ser uma forma de servir a Deus e ao próximo...</p>
+                    <span class="post-date">Janeiro 2025</span>
+                </div>
+                <div class="blog-post">
+                    <h3>Tecnologia que Serve</h3>
+                    <p>Reflexões sobre o uso da tecnologia para o bem comum...</p>
+                    <span class="post-date">Dezembro 2024</span>
+                </div>
+                <div class="blog-post">
+                    <h3>Fé e Inovação</h3>
+                    <p>Como unir valores cristãos com inovação tecnológica...</p>
+                    <span class="post-date">Novembro 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Vamos Conversar?</h2>
+            <p class="section-subtitle">Estou sempre aberto a novas oportunidades e colaborações</p>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>david@exemplo.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+55 (11) 99999-9999</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 David Fernandes. Feito com ❤️ e muito ☕</p>
+            <p class="footer-quote">"Toda boa dádiva e todo dom perfeito vêm do alto" - Tiago 1:17</p>
+        </div>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>
