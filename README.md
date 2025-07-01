@@ -20,7 +20,8 @@ URL: [https://exciting-interesting-eustoma.glitch.me/](https://davidsobre.glitch
 - **Timeline interativa** da trajetória profissional
 - **Modais detalhados** para cada projeto
 - **Navegação suave** entre seções
-- **Formulário de contato** funcional
+- **Formulário de contato** funcional com EmailJS
+- **Sistema de notificações** elegante
 - **Mensagens inspiradoras** periódicas
 
 ### 📱 Seções Principais
@@ -65,10 +66,40 @@ URL: [https://exciting-interesting-eustoma.glitch.me/](https://davidsobre.glitch
 - Conteúdo inspiracional
 
 #### 📧 Contato
-- Formulário com validação
+- Formulário funcional com EmailJS
+- Sistema de notificações em tempo real
+- Fallback para cliente de email
 - Links para redes sociais
 - Informações de contato
 - Animações de envio
+
+## 📧 Configuração do Formulário de Contato
+
+O portfólio possui um sistema completo de formulário de contato com duas opções:
+
+### 🎯 Opção 1: EmailJS (Recomendado)
+Para receber emails diretamente na sua caixa de entrada:
+
+1. **Configure o EmailJS** seguindo o arquivo `CONFIGURACAO_EMAILJS.md`
+2. **Execute o script** de configuração automática:
+```bash
+./configurar_emailjs.sh
+```
+3. **Ou configure manualmente** editando as chaves no `script.js`
+
+### 🎯 Opção 2: Fallback Automático
+Se o EmailJS não for configurado, o sistema:
+- Abre automaticamente o cliente de email padrão
+- Preenche destinatário, assunto e mensagem
+- Permite envio direto pelo email pessoal
+
+### ✨ Funcionalidades do Formulário
+- ✅ **Validação em tempo real** dos campos
+- ✅ **Estados visuais** (loading, sucesso, erro)
+- ✅ **Sistema de notificações** elegante
+- ✅ **Fallback automático** se falhar
+- ✅ **Design responsivo** para mobile
+- ✅ **Acessibilidade completa**
 
 ## 🛠️ Tecnologias Utilizadas
 

@@ -469,9 +469,12 @@ function initProjectModals() {
     }
 }
 
-// Formulário de contato
+// Formulário de contato com EmailJS
 function initContactForm() {
     const form = document.getElementById('contact-form');
+    
+    // Inicializar EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY"); // Substituir pela sua chave pública do EmailJS
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -479,28 +482,137 @@ function initContactForm() {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
         
-        // Simular envio (integrar com serviço real)
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
+        // Estado de loading
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
         submitBtn.disabled = true;
         
-        // Simular delay de envio
-        setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
-            submitBtn.style.background = '#10b981';
+        try {
+            // Preparar parâmetros para o EmailJS
+            const templateParams = {
+                from_name: data.name,
+                from_email: data.email,
+                subject: data.subject,
+                message: data.message,
+                to_name: 'David Fernandes',
+                to_email: 'david.h.queiroz@gmail.com'
+            };
             
+            // Enviar email usando EmailJS
+            const response = await emailjs.send(
+                'YOUR_SERVICE_ID',    // Substituir pelo seu Service ID
+                'YOUR_TEMPLATE_ID',   // Substituir pelo seu Template ID
+                templateParams
+            );
+            
+            if (response.status === 200) {
+                // Sucesso
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
+                submitBtn.style.background = '#10b981';
+                
+                showNotification(
+                    'Mensagem Enviada!',
+                    'Obrigado pelo contato. Retornarei em breve!',
+                    'success'
+                );
+                
+                // Reset form após sucesso
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            }
+            
+        } catch (error) {
+            console.error('Erro ao enviar email:', error);
+            
+            // Fallback: criar link de email
+            const subject = encodeURIComponent(data.subject);
+            const body = encodeURIComponent(
+                `Nome: ${data.name}\nEmail: ${data.email}\n\nMensagem:\n${data.message}`
+            );
+            const mailtoLink = `mailto:david.h.queiroz@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Estado de erro
+            submitBtn.innerHTML = '<i class="fas fa-envelope"></i> Abrir Email';
+            submitBtn.style.background = '#3b82f6';
+            
+            showNotification(
+                'Abrindo Cliente de Email',
+                'Seu cliente de email será aberto com a mensagem preenchida.',
+                'info'
+            );
+            
+            // Abrir cliente de email
+            submitBtn.onclick = (e) => {
+                e.preventDefault();
+                window.location.href = mailtoLink;
+            };
+            
+            // Reset button após alguns segundos
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 submitBtn.style.background = '';
-                form.reset();
-            }, 3000);
-        }, 2000);
-        
-        console.log('Dados do formulário:', data);
+                submitBtn.onclick = null;
+            }, 5000);
+        }
     });
+}
+
+// Sistema de notificações
+function showNotification(title, message, type = 'info') {
+    const container = document.getElementById('notification-container');
+    
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    
+    const icons = {
+        success: 'fas fa-check-circle',
+        error: 'fas fa-exclamation-circle',
+        info: 'fas fa-info-circle'
+    };
+    
+    notification.innerHTML = `
+        <div class="notification-icon">
+            <i class="${icons[type]}"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-title">${title}</div>
+            <div class="notification-message">${message}</div>
+        </div>
+        <button class="notification-close">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+    
+    container.appendChild(notification);
+    
+    // Animar entrada
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    // Configurar botão de fechar
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.addEventListener('click', () => {
+        notification.classList.remove('show');
+        setTimeout(() => container.removeChild(notification), 400);
+    });
+    
+    // Auto-remover após 5 segundos
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    container.removeChild(notification);
+                }
+            }, 400);
+        }
+    }, 5000);
 }
 
 // Mensagens técnicas motivacionais
