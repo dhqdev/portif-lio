@@ -189,10 +189,10 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📞 Contato
 
-- **Email**: david@exemplo.com
-- **LinkedIn**: [linkedin.com/in/david-fernandes](https://linkedin.com/in/david-fernandes)
-- **GitHub**: [github.com/davidbfernandes](https://github.com/davidbfernandes)
-- **WhatsApp**: +55 (11) 99999-9999
+- **Email**: david.h.queiroz@gmail.com
+- **LinkedIn**: [linkedin.com/in/david-fernandes-77a663229](https://www.linkedin.com/in/david-fernandes-77a663229/)
+- **GitHub**: [github.com/dhqdev](https://github.com/dhqdev)
+- **WhatsApp**: +55 (19) 99537-8302
 
 ## 💝 Agradecimentos
 
